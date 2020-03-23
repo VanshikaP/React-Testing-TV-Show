@@ -5,7 +5,7 @@ export default function Episodes(props) {
   return (
     <div className="episodes">
       {props.episodes.map(e => (
-        <div className="episode" key={e.id}>
+        <div data-testid="episode-list" className="episode" key={e.id}>
           {e.image && (
             <img className="episode-image" src={e.image.medium} alt={e.name} />
           )}
@@ -23,3 +23,14 @@ export default function Episodes(props) {
     </div>
   );
 }
+
+
+/* Tests
+
+1. Test that component renders with empty props (when component mounts)
+  - props.episodes: []
+
+//Happy Path
+2. Test that episodes list is rendered when there is no error, and when props.missions has data
+  
+*/
