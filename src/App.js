@@ -45,7 +45,7 @@ export default function App() {
         placeholder="Select an option"
       />
       <Episodes episodes={episodes} />
-      <Route exact path='/:seasonId/:episodeID'>
+      <Route exact path='/:seasonID/:episodeID'>
         <EpisodePage />
       </Route>
     </div>
