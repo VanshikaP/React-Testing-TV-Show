@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import { formatSeasons } from "./utils/formatSeasons";
 import {fetchShow} from './api/fetchShow'
 
 import Episodes from "./components/Episodes";
+import EpisodePage from './components/EpisodePage'
 import "./styles.css";
 
 export default function App() {
@@ -31,6 +33,7 @@ export default function App() {
   }
 
   return (
+    <BrowserRouter>
     <div className="App">
       <img className="poster-img" src={show.image.original} alt={show.name} />
       <h1>{show.name}</h1>
@@ -42,6 +45,10 @@ export default function App() {
         placeholder="Select an option"
       />
       <Episodes episodes={episodes} />
+      <Route exact path='/:seasonId/:episodeID'>
+        <EpisodePage />
+      </Route>
     </div>
+    </BrowserRouter>
   );
 }
