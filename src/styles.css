@@ -67,6 +67,15 @@ body {
   margin: 16px;
 }
 
+.episode-full {
+  width: 80%;
+  margin: 5% auto;
+}
+.episode-full > img {
+  width: 100%;
+  margin: 2% auto;
+}
+
 .episode-image {
   width: 250px;
   border-top-left-radius: 6px;
